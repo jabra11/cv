@@ -1,20 +1,17 @@
-\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\documentclass[11pt,a4paper,sans]{moderncv}
 
 % moderncv themes
-\moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
-\moderncvstyle{fancy}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
-%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\moderncvcolor{blue}
+\moderncvstyle{fancy}
 
-% adjust the page margins
-\usepackage[scale=0.75]{geometry}
-\setlength{\footskip}{136.00005pt}                 % depending on the amount of information in the footer, you need to change this value. comment this line out and set it to the size given in the warning
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+% page margins
+\usepackage[scale=0.82,top=1.6cm,bottom=1.6cm]{geometry}
+\setlength{\hintscolumnwidth}{3.6cm}
+% break the email address after the @ instead of at the hyphen
+\renewcommand*{\emaillink}[1]{\href{mailto:#1}{joerg.barkoczi@\newline rwth-aachen.de}}
+\nopagenumbers{}
 
 % font loading
-% for luatex and xetex, do not use inputenc and fontenc
-% see https://tex.stackexchange.com/a/496643
 \ifxetexorluatex
   \usepackage{fontspec}
   \usepackage{unicode-math}
@@ -22,89 +19,66 @@
   \setmainfont{Latin Modern Roman}
   \setsansfont{Latin Modern Sans}
   \setmonofont{Latin Modern Mono}
-  \setmathfont{Latin Modern Math} 
+  \setmathfont{Latin Modern Math}
 \else
   \usepackage[T1]{fontenc}
   \usepackage{lmodern}
 \fi
 
-% document language
-\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
+\usepackage[english]{babel}
 
 % personal data
 \name{Jörg}{Barkoczi}
-\title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
-%\born{4 July 1776}                                 % optional, remove / comment the line if not wanted
-%\address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
-%\phone[mobile]{+1~(234)~567~890}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
-%\phone[fixed]{+2~(345)~678~901}
-%\phone[fax]{+3~(456)~789~012}
-\email{joerg.barkoczi@rwth-aachen.de}                               % optional, remove / comment the line if not wanted
-%\homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
+\email{joerg.barkoczi@rwth-aachen.de}
+\social[linkedin]{joergbarkoczi}
+\social[github]{jabra11}
 
-% Social icons
-\social[linkedin]{joergbarkoczi}                        % optional, remove / comment the line if not wanted
-%\social[xing]{john\_doe}                           % optional, remove / comment the line if not wanted
-%\social[twitter]{ji\_doe}                             % optional, remove / comment the line if not wanted
-\social[github]{jabra11}                              % optional, remove / comment the line if not wanted
-%\social[gitlab]{jdoe}                              % optional, remove / comment the line if not wanted
-% \social[stackoverflow]{0000000/johndoe}            % optional, remove / comment the line if not wanted
-% \social[bitbucket]{jdoe}                           % optional, remove / comment the line if not wanted
-% \social[skype]{jdoe}                               % optional, remove / comment the line if not wanted
-% \social[orcid]{0000-0000-000-000}                  % optional, remove / comment the line if not wanted
-% \social[researchgate]{jdoe}                        % optional, remove / comment the line if not wanted
-% \social[researcherid]{jdoe}                        % optional, remove / comment the line if not wanted
-% \social[telegram]{jdoe}                            % optional, remove / comment the line if not wanted
-% \social[whatsapp]{12345678901}                     % optional, remove / comment the line if not wanted
-% \social[signal]{12345678901}                       % optional, remove / comment the line if not wanted
-% \social[matrix]{@johndoe:matrix.org}               % optional, remove / comment the line if not wanted
-% \social[googlescholar]{googlescholarid}            % optional, remove / comment the line if not wanted
-
-
-%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
-%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
-%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
-
-% bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
-%   to show numerical labels in the bibliography (default is to show no labels)
-%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
-\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
-%   to redefine the bibliography heading string ("Publications")
-%\renewcommand{\refname}{Articles}
-
-% bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
-%----------------------------------------------------------------------------------
-%            content
 %----------------------------------------------------------------------------------
 \begin{document}
-%-----       resume       ---------------------------------------------------------
 \makecvtitle
 
-\input{education.tex}
-%\input{thesis.tex}
+%-----------------------------------------------------------------------------------
+\section{Education}
+\cventry{2025--today}{Computer Science M.Sc.}{RWTH Aachen University}{Aachen}{}{Expected graduation: 2028}
+\cventry{2022--today}{Mathematics B.Sc.}{RWTH Aachen University}{Aachen}{}{Second degree, studied in parallel}
+\cventry{2022--2025}{Computer Science B.Sc.}{RWTH Aachen University}{Aachen}{}{Grade: 1.2, with distinction (German scale, 1.0 = best); completed in the standard period of study}
+\cventry{2019--2022}{Abitur}{Lessing-Gymnasium und -Berufskolleg}{Düsseldorf}{}{Grade: 1.0}
 
-\input{experience.tex}
-
-\input{languages.tex}
-
-\input{honors.tex}
-
-\input{other}
-
-
+%-----------------------------------------------------------------------------------
 \section{Publications}
-
 \cvitem{2026}{
-  Zijian Yang, \textbf{J{\"o}rg Barkoczi},
-  Ralf Schl{\"u}ter, and Hermann Ney.
-  \textit{Sequence-Level Unsupervised Training in
-  Speech Recognition: A Theoretical Study}.
-  In \textit{Proc. IEEE ICASSP},
-  Barcelona, Spain, May 2026.
+  Zijian Yang, \textbf{J{\"o}rg Barkoczi}, Ralf Schl{\"u}ter, and Hermann Ney.
+  \textit{Sequence-Level Unsupervised Training in Speech Recognition: A Theoretical Study}.
+  In \textit{Proc.\ IEEE ICASSP}, Barcelona, Spain, May 2026.
   \href{https://arxiv.org/abs/2603.02285}{[arXiv]}
   \href{https://ieeexplore.ieee.org/document/11462675}{[IEEE]}
 }
+
+%-----------------------------------------------------------------------------------
+\section{Experience}
+\cventry{2025--today}{Student Research Assistant}{Chair of Human Language Technology and Pattern Recognition (i6), RWTH Aachen University}{Supervisor: Prof. Hermann Ney}{}{
+Research on unsupervised and generative training for automatic speech recognition.
+\begin{itemize}
+  \item Co-authored an ICASSP 2026 paper on sequence-level unsupervised training; implemented simulations to empirically validate the theoretical results.
+  \item Trained Conformer CTC acoustic models on LibriSpeech in PyTorch, developing generative training objectives, GMM-alignment warm-up and iterative soft-target CTC.
+  \item Built a pipeline from self-supervised wav2vec~2.0 features (PCA, Gaussian HMM) to RASR decoding, with frame-level accuracy analysis.
+\end{itemize}}
+
+\cventry{2023--2025}{Student Tutor}{RWTH Aachen University}{}{}{
+Weekly tutorials for groups of up to 60 students in \textit{Discrete Structures} (Chair of Algebra and Number Theory, 2023--2024) and \textit{Computability and Complexity} (Chair of Algorithms and Complexity, 2024--2025).}
+
+%-----------------------------------------------------------------------------------
+\section{Skills}
+\cvitem{Programming}{Python, C++, Rust, Linux}
+\cvitem{Frameworks}{PyTorch, NumPy, RETURNN, Sisyphus}
+
+%-----------------------------------------------------------------------------------
+\section{Honors and Awards}
+\cvitem{2025}{\textbf{Dean's List for the entire B.Sc. degree}, RWTH Aachen University -- top 5\%}
+\cvitem{2023--2025}{\textbf{Dean's List} in every academic year (2023, 2024, 2025) -- top 5\% of students in my year}
+
+%-----------------------------------------------------------------------------------
+\section{Languages}
+\cvitem{}{German (native), English (proficient), Portuguese (intermediate), Spanish (basic)}
 
 \end{document}
